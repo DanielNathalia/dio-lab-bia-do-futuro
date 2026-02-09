@@ -5,29 +5,29 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+Usuários enfrentam dificuldades para organizar e analisar dados financeiros pessoais de forma centralizada, estruturada e acessível, especialmente no acompanhamento de receitas, despesas, categorias e histórico financeiro.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+O agente atua como um assistente virtual financeiro baseado em IA generativa, capaz de auxiliar o usuário. Utiliza processamento de linguagem natural para interpretar comandos, gerar resumos, relatórios e responder consultas financeiras de forma contextualizada.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Sua descrição aqui]
+Usuários iniciantes interessados em controle e organização financeiro pessoal.
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+FinNat AI
 
 ### Personalidade
 > Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-[Sua descrição aqui]
+Consultivo, organizado e educativo, ajudando o usuário a entender suas finanças de forma simples e prática.
 
 ### Tom de Comunicação
 > Formal, informal, técnico, acessível?
