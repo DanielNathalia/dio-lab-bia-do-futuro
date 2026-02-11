@@ -54,7 +54,14 @@ flowchart TD
     C --> E[Validação]
     E --> F[Resposta]
 ```
-
+flowchart TD
+    A[Usuário] -->|Entrada em linguagem natural| B[Interface]
+    B --> C[LLM]
+    C --> D[Camada de Contexto]
+    D --> C
+    C --> E[Validação]
+    E --> F[Resposta Estruturada]
+    
 ### Componentes
 
 | Componente | Descrição |
@@ -65,6 +72,11 @@ flowchart TD
 | Validação | [ex: Checagem de alucinações] |
 
 ---
+Componente          |  Descrição
+Interface           |  Aplicação Web (Streamlit / Flask / FastAPI).
+LLM                 |  Modelo de linguagem via API (ex: GPT).
+Camada de Contexto  |   Persistência em SQLite/JSON com receitas, despesas e                           categorias.
+Validação           |  Regras de negócio, sanitização de entrada e controle de                        escopo.
 
 ## Segurança e Anti-Alucinação
 
@@ -75,7 +87,12 @@ flowchart TD
 - [ ] [ex: Quando não sabe, admite e redireciona]
 - [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
 
+- [X]  Respostas restritas ao contexto financeiro armazenado
+- [X]  Validação de dados antes da geração de respostas
+- [X]  Bloqueio de inferências sem dados explícitos
+- [X]  Comunicação clara quando não há informação suficiente
+
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+ O agente não acessa sistemas bancários externos, não realiza transações financeiras, não oferece recomendações de investimento e depende exclusivamente dos dados fornecidos pelo usuário para análise e geração de respostas.
