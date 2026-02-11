@@ -47,45 +47,28 @@ Acessível e objetivo, técnico e educativo.
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
-```
-flowchart TD
-    A[Usuário] -->|Entrada em linguagem natural| B[Interface]
+    A[Usuário] -->|Entrada em linguagem natural| B[Interface] -->|Mensagem| B[Interface]
     B --> C[LLM]
     C --> D[Camada de Contexto]
     D --> C
     C --> E[Validação]
     E --> F[Resposta Estruturada]
-    
+```
+
 ### Componentes
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Aplicação Web (Streamlit / Flask / FastAPI) |
+| LLM | Modelo de linguagem via API (ex: GPT) |
+| Base de Conhecimento | Persistência em SQLite/JSON com receitas, despesas e categorias |
+| Validação | Regras de negócio, sanitização de entrada e controle de escopo |
 
 ---
-Componente          |  Descrição
-Interface           |  Aplicação Web (Streamlit / Flask / FastAPI).
-LLM                 |  Modelo de linguagem via API (ex: GPT).
-Camada de Contexto  |   Persistência em SQLite/JSON com receitas, despesas e                           categorias.
-Validação           |  Regras de negócio, sanitização de entrada e controle de                        escopo.
 
 ## Segurança e Anti-Alucinação
 
 ### Estratégias Adotadas
-
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
 
 - [X]  Respostas restritas ao contexto financeiro armazenado
 - [X]  Validação de dados antes da geração de respostas
@@ -95,4 +78,7 @@ Validação           |  Regras de negócio, sanitização de entrada e controle
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
- O agente não acessa sistemas bancários externos, não realiza transações financeiras, não oferece recomendações de investimento e depende exclusivamente dos dados fornecidos pelo usuário para análise e geração de respostas.
+ - Não acessa sistemas bancários externos;
+ - Não realiza transações financeiras;
+ - Não oferece recomendações de investimento;
+ -  Depende exclusivamente dos dados fornecidos pelo usuário para análise e geração de respostas.
