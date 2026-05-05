@@ -1,149 +1,67 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 GenAI Financial Assistant: Smart Banking Agent
 
-## Contexto
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Framework](https://img.shields.io/badge/Framework-LangChain-00A67E?style=for-the-badge)
+![LLM](https://img.shields.io/badge/LLM-Ollama%20%7C%20GPT--4-blue?style=for-the-badge)
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+### 📖 Overview
+This project features a **Generative AI Financial Agent** designed to evolve from reactive support to proactive financial consultancy. Leveraging **Large Language Models (LLMs)** and **Prompt Engineering**, the agent provides personalized investment insights, expense alerts, and consultative financial planning.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
-
----
-
-## O Que Você Deve Entregar
-
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+### 🎯 Key Objectives
+*   **Proactive Assistance:** Antincipating user needs through transaction analysis.
+*   **Hyper-Personalization:** Tailoring suggestions based on unique investor profiles and history.
+*   **Reliability & Anti-Hallucination:** Implementing strict system prompts and knowledge base grounding to ensure financial safety.
 
 ---
 
-### 2. Base de Conhecimento
+### 📂 Repository Structure & Project Milestones
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+The project is divided into specialized modules to ensure scalability and clarity:
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+| Phase | Module | Documentation | Key Deliverables |
+| :--- | :--- | :--- | :--- |
+| **01** | **Core Strategy** | [`/docs/01-agent-specs.md`](./docs/01-documentacao-agente.md) | Use case definition, persona, and system architecture. |
+| **02** | **Knowledge Base** | [`/docs/02-knowledge-base.md`](./docs/02-base-conhecimento.md) | RAG strategy using mocked financial data (CSV/JSON). |
+| **03** | **Prompt Engineering** | [`/docs/03-prompts.md`](./docs/03-prompts.md) | System prompts, few-shot examples, and edge-case handling. |
+| **04** | **Functional Prototype** | [`/src/`](./src/) | Interactive UI (Streamlit/Gradio) integrated with LLMs. |
+| **05** | **Quality Metrics** | [`/docs/04-metrics.md`](./docs/04-metricas.md) | Accuracy, safety rates, and profile coherence evaluation. |
 
 ---
 
-### 3. Prompts do Agente
+### 🛠️ Tech Stack
+*   **Orchestration:** LangChain / LangFlow.
+*   **Models:** Ollama (Local) or OpenAI GPT-4 (API).
+*   **Data Handling:** Pandas for CSV transaction processing.
+*   **Frontend:** Streamlit for the interactive financial dashboard.
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+### 📊 Mock Data Integration
+The agent is grounded in a simulated financial environment using:
+*   **Transactions:** `transacoes.csv` for behavioral analysis.
+*   **Investor Profile:** `perfil_investidor.json` for personalized risk assessment.
+*   **Product Catalog:** `produtos_financeiros.json` for consultative matching.
 
 ---
 
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+### 🚀 How to Run (Development)
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/DanielNathalia/AI-Financial-Assistant.git
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Launch the prototype:**
+    ```bash
+    streamlit run src/app.py
+    ```
 
 ---
 
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+### 🛡️ Safety & Anti-Hallucination
+In the financial sector, precision is non-negotiable. This agent employs:
+*   **System Constraints:** Explicit "don't know" protocols for out-of-scope queries.
+*   **Grounding:** Every recommendation must be mapped back to the provided knowledge base.
 
 ---
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
-
----
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
